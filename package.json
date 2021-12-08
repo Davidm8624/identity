@@ -27,5 +27,14 @@
   "main": "index.js",
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Davidm8624/identity-capstone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Davidm8624/identity-capstone/issues"
+  },
+  "homepage": "https://github.com/Davidm8624/identity-capstone#readme",
+  "devDependencies": {}
 }
