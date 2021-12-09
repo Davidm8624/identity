@@ -16,14 +16,15 @@ const connectDB = require('./DB/connect')
 const notFoundError = require('./Middleware/Not-found')
 const errorHandlerMiddleware = require('./Middleware/Error-handler')
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 app.use(express.json())
 app.use(fileUpload({useTempFiles: true}))
 app.use(express.static('./public')) 
 app.get('/', (req, res) => {
   res.send('<h1>Upload Files</h1>')
 })
-app.use('/api/v1/products', productRouter)
+
+app.use('/api/v1/products', shopRouter)
 app.use(notFoundError)
 app.use(errorHandlerMiddleware)
 

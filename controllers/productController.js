@@ -7,25 +7,23 @@ const createProduct = async (req, res) => {
 };
 
 const getAllProducts = async (req, res) => {
-  const {songName, artist, rating, creator} = req.query;
+  const {songName, artist, rating} = req.query;
   let searchQuery = {};
 
   if(songName) searchQuery.songName = songName;
   if(artist) searchQuery.artist = artist;
   if(rating) searchQuery.rating = rating;
-  if(creator) searchQuery.creator = creatorID;
 
   const product = await Product.find(songQuery);
 };
 
-const addToCart = async(req, res)=> {
-  const {songName, artist, rating, creator} = req.query;
+const addToCart = async (req, res) => {
+  const {songName, artist, rating} = req.query;
   let searchQuery = {};
 
   if(songName) searchQuery.songName = songName;
   if(artist) searchQuery.artist = artist;
   if(rating) searchQuery.rating = rating;
-  if(creator) searchQuery.creator = creatorID;
 
   const add = await Product.find(songQuery);
   const cart = Cart.create({add});
