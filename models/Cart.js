@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const productSchema = new mongoose.Schema({
+const cartSchema = new mongoose.Schema({
   name: {
     type: String,
     minlength: 3,
@@ -19,24 +19,16 @@ const productSchema = new mongoose.Schema({
     type: String,
     requird: true,
     enum: {
-      values: [
-        "Black",
-        "White",
-        "Asian",
-        "Other"
-      ],
+      values: ["Black", "White", "Asian", "Other"],
     },
   },
-  sex: {
+  gender: {
     type: String,
     require: true,
     enum: {
-      values: [
-        "Male",
-        "Female",
-      ]
-    }
+      values: ["Male", "Female", "Monkay"],
+    },
   },
 });
 
-module.exports = mongoose.model("products", productSchema);
+module.exports = mongoose.model("cart", cartSchema);
