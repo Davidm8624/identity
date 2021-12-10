@@ -11,6 +11,6 @@ const { uploadProductImage } = require("../controllers/uploadController");
 
 router.route("/").get(getAllProducts).post(createProduct);
 router.route("/uploads").post(uploadProductImage);
-router.route("/c").post(addToCart);
+router.route("/shop").post(addToCart);
 
 module.exports = router;
