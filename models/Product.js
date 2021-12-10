@@ -46,7 +46,7 @@ const productSchema = new mongoose.Schema({
         "Female",
       ]
     }
-  },
+  },  
 });
 
 module.exports = mongoose.model("products", productSchema);

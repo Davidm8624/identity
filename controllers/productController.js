@@ -14,7 +14,8 @@ const getAllProducts = async (req, res) => {
   if(artist) searchQuery.artist = artist;
   if(rating) searchQuery.rating = rating;
 
-  const product = await Product.find(songQuery);
+  const product = await Product.find(searchQuery);
+  res.status(200).json({product})
 };
 
 const addToCart = async (req, res) => {

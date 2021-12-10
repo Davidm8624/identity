@@ -6,27 +6,24 @@ const app = express()
 const shopRouter = require('./routes/shopRouter')
 const connectDB = require('./DB/connect')
 
-// const cloudinary = require('cloudinary').v2
-// cloudinary.config({ 
-//   cloud_name: process.env.cloud_name ,
-//   api_key: process.env.api_key,
-//   api_secret: process.env.api_secret
-// });
+const cloudinary = require('cloudinary').v2
+cloudinary.config({ 
+  cloud_name: process.env.cloud_name,
+  api_key: process.env.api_key,
+  api_secret: process.env.api_secret
+});
 
 const notFoundError = require('./Middleware/Not-found')
 const errorHandlerMiddleware = require('./Middleware/Error-handler')
 
 const port = process.env.PORT || 3000;
 app.use(express.json())
-app.use(fileUpload({useTempFiles: true}))
-app.use(express.static('./public')) 
-app.get('/', (req, res) => {
-  res.send('<h1>Upload Files</h1>')
-})
+.use(fileUpload({useTempFiles: true}))
 
-app.use('/api/v1/products', shopRouter)
-app.use(notFoundError)
-app.use(errorHandlerMiddleware)
+.use("/", express.static('./public')) 
+.use('/api/v1/products', shopRouter)
+.use(notFoundError)
+// .use(errorHandlerMiddleware)
 
 const start = async() => {
   try{
