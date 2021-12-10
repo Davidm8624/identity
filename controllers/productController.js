@@ -18,14 +18,9 @@ const getAllProducts = async (req, res) => {
 };
 
 const addToCart = async (req, res) => {
-  const {songName, artist, rating} = req.query;
-  let searchQuery = {};
+  const id = req.body;
 
-  if(songName) searchQuery.songName = songName;
-  if(artist) searchQuery.artist = artist;
-  if(rating) searchQuery.rating = rating;
-
-  const add = await Product.find(songQuery);
+  const add = await Product.findById(id);
   const cart = Cart.create({add});
   res.json({status: 200, msg: `${add} was added to your cart.`});
 }
