@@ -1,3 +1,10 @@
-## we did this on another page so thats why this file is created late
 
-### layout:
+
+# layout:
+
+## buy: where you can input your credit card etc
+## shop: where you can add items to your cart and the ammount
+## cart: where you view items that you have selevted aswell as their quianity and price and change the quantity
+## sell: create a new product on the shop page
+
+#### shop is the default page, rest can be accessed from links at the top or by using the url
