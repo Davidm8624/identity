@@ -41,9 +41,9 @@ imageInput.addEventListener("change", async (e) => {
         "Content-Type": "multipart/form-data",
       },
     });
+    imageValue = src
     console.log(data);
   } catch (err) {
-    console.log(src +  "logged");
     console.log(err);
   }
 });
