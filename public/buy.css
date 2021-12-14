@@ -1,0 +1,28 @@
+header{
+  text-align: center;
+  font-size: 300%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#cartButton{
+position: relative;
+left: 700px;
+top: 2px;
+}
+
+#checkoutButton{
+  visibility: hidden;
+}
+
+a{
+  padding-left: 2.5px;
+  padding-right: 2.5px;
+}
+a:link{
+  text-decoration: none;
+  font-size: large;
+}
+a:visited{
+  text-decoration: none;
+  color: darkgoldenrod;
+}
