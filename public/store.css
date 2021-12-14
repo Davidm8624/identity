@@ -22,3 +22,9 @@ a:visited{
   text-decoration: none;
   color: darkgoldenrod;
 }
+
+.img{
+  max-width: 500px;
+  max-height: 500px;
+  
+}

@@ -47,11 +47,6 @@ const productSchema = new mongoose.Schema({
       ]
     }
   },  
-  id: {
-      type: mongoose.Types.ObjectId,
-      ref: "ID",
-      required: [true, "Please provide your username"],
-  }
 });
 
 module.exports = mongoose.model("products", productSchema);
