@@ -47,24 +47,3 @@ imageInput.addEventListener("change", async (e) => {
     console.log(err);
   }
 });
-
-updateItem = (id) => {
-  axios.post(`/cart/${id}`);
-};
-
-async function fetchProducts(){
-  try{
-    const{
-      data: {product}
-    } = await axios.get(`${url}/shop`);
-    console.log(product);
-    const tempProducts = product.map((item) => {
-      return `<article class = "product"> <img src="${item.image}" alt = "${item.name}" class = "img"/> <footer><h3>${item.name}</h3><br/><h4>${item.price}</h4></article>`
-    }).join("");
-    container.innerHTML = tempProducts;
-  }catch(err){
-    console.error(err);
-  }
-}
-
-fetchProducts();

@@ -18,6 +18,12 @@ const getAllProducts = async (req, res) => {
   res.status(200).json({product})
 };
 
+const getAProduct = async(req, res) => {
+  const id = req.query;
+
+  const product = Product.findById({id});
+}
+
 const addToCart = async (req, res) => {
   const id = req.body;
 
@@ -29,5 +35,6 @@ const addToCart = async (req, res) => {
 module.exports = {
   createProduct,
   getAllProducts,
-  addToCart
+  addToCart,
+  getAProduct
 };
