@@ -17,6 +17,7 @@ fileForm.addEventListener("submit", async (e) => {
     const product = { name: nameValue, price: priceValue, image: imageValue };
     console.log(product);
     await axios.post(`${url}/sell`, product);
+    priceValue = 0;
     fetchProducts();
   } catch (error) {
     console.log(error);

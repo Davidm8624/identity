@@ -7,7 +7,7 @@ const productSchema = new mongoose.Schema({
     required: true,
     enum: {
       values: [
-        "drivers-license",
+        "drivers-license", 
         "passport",
         "school-id",
         "bank-info",
@@ -37,7 +37,7 @@ const productSchema = new mongoose.Schema({
       ],
     },
   },
-  sex: {
+  gneder: {
     type: String,
     require: true,
     enum: {
@@ -46,7 +46,7 @@ const productSchema = new mongoose.Schema({
         "Female",
       ]
     }
-  },  
+  }, 
 });
 
 module.exports = mongoose.model("products", productSchema);

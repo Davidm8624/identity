@@ -26,7 +26,7 @@ const cartSchema = new mongoose.Schema({
     type: String,
     require: true,
     enum: {
-      values: ["Male", "Female", "Monkay"],
+      values: ["Male", "Female"],
     },
   },
 });
