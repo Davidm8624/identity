@@ -5,6 +5,7 @@ const express = require('express')
 const app = express()
 const shopRouter = require('./routes/shopRouter')
 const connectDB = require('./DB/connect')
+// const stripe = require('./controllers/stripeController')
 
 const cloudinary = require('cloudinary').v2
 
@@ -20,7 +21,7 @@ const errorHandlerMiddleware = require('./Middleware/Error-handler')
 const port = process.env.PORT || 3000;
 app.use(express.json())
 .use(fileUpload({useTempFiles: true}))
-
+// .use(stripe)
 .use("/", express.static('./public')) 
 .use('/api/v1/products', shopRouter)
 .use(notFoundError)
