@@ -4,11 +4,11 @@ header{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-#cartButton{
+/* #cartButton{
 position: relative;
 left: 700px;
 top: 2px;
-}
+} */
 
 #checkoutButton{
   visibility: hidden;
