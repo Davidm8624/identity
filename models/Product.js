@@ -3,17 +3,23 @@ const mongoose = require("mongoose");
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
+    unique: true,
+    minlength: 3,
+    required: true,
+  },
+  type: {
+    type: String,
     minlength: 3,
     required: true,
     enum: {
       values: [
-        "drivers-license", 
+        "drivers-license",
         "passport",
         "school-id",
         "bank-info",
         "social-security-card",
         "birth-certificate",
-      ]
+      ],
     }
   },
   price: {
@@ -37,16 +43,25 @@ const productSchema = new mongoose.Schema({
       ],
     },
   },
-  gneder: {
+  gender: {
     type: String,
-    require: true,
+    requird: true,
     enum: {
       values: [
         "Male",
         "Female",
-      ]
-    }
-  }, 
+        "male",
+        "female",
+        "MALE",
+        "FEMALE"
+      ],
+    },
+  },
+  age: {
+    type: Number,
+    minimum: 18,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("products", productSchema);

@@ -4,7 +4,22 @@ const cartSchema = new mongoose.Schema({
   name: {
     type: String,
     minlength: 3,
-    // required: true,
+    required: true,
+  },
+  type: {
+    type: String,
+    minlength: 3,
+    required: true,
+    enum: {
+      values: [
+        "drivers-license", 
+        "passport",
+        "school-id",
+        "bank-info",
+        "social-security-card",
+        "birth-certificate",
+      ],
+    }
   },
   price: {
     type: Number,

@@ -15,7 +15,9 @@ async function fetchProducts() {
       .map((item) => {
         return `<article class = "product"> 
         <img src="${item.image}" alt = "${item.name}" class = "img"/> 
-        <footer><h3>${item.name}</h3><br/><h4>${item.price}</h4></article><br/>
+        <footer><h3>${item.name} <br/><br/> ${item.type}</h3>
+        <h4>${item.price}</h4>
+        <p>${item.race} ${item.gender}</article><br/>
         <button onclick="console.log('${item._id}');updateItem('${item._id}')">Add To Cart</button>`;
       })
       .join("");

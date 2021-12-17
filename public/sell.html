@@ -1,41 +1,59 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="form.css">
 <html lang="en">
-  <header>
-    <a href="./index.html" class="navigation">Home</a>
-    <a href="./sell.html" class="navigation">Sell</a>
-    <!-- <a href="./buy.html" class="navigation">Checkout</a> -->
-    <a href="./cart.html" class="navigation" id="cartButton">🛒</a>
+<header>
+  <a href="./index.html" class="navigation">Home</a>
+  <a href="./sell.html" class="navigation">Sell</a>
+  <!-- <a href="./buy.html" class="navigation">Checkout</a> -->
+  <a href="./cart.html" class="navigation" id="cartButton">🛒</a>
 </header>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sell Product</title>
-      <link rel="stylesheet" href="./form.css" />
-  </head>
-  <body>
-    <form class="form file-form">
-      <h4>Create Product</h4>
-      <div class="form-row">
-        <label for="name">name</label>
-        <input id="name" type="text" class="form-input" value="1" />
-      </div>
 
-      <div class="form-row">
-        <label for="">price</label>
-        <input id="price" type="text" class="form-input" value="111.93" />
-      </div>
-<br>
-      <div class="form-row">
-        <label for="image">image</label>
-        <input id="image" type="file" class="form-input" value="image/*" />
-        <br>
-      </div>
-      <button type="submit">add product</button>
-    </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sell Product</title>
+  <link rel="stylesheet" href="./form.css" />
+</head>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
-    <script src="./sell.js"></script>
-  </body>
+<body>
+  <form class="form file-form">
+    <h4>Create Product</h4>
+    <div class="form-row">
+      <label for="name">Name</label>
+      <input id="name" type="text" class="form-input" />
+    </div>
+    <div class="form-row">
+      <label for="type">Type</label>
+      <input id="type" type="text" class="form-input" />
+    </div>
+        <div class="form-row">
+      <label for="age">Age</label>
+      <input id="age" type="text" class="form-input" />
+    </div>
+    <div class="form-row">
+      <label for="price">Price</label>
+      <input id="price" type="text" class="form-input" value="0" />
+    </div>
+    <div class="form-row">
+      <label for="race">Race</label>
+      <input id="race" type="text" class="form-input" />
+    </div>
+    <div class="form-row">
+      <label for="gender">Gender</label>
+      <input id="gender" type="text" class="form-input" />
+    </div>
+    <br>
+    <div class="form-row">
+      <label for="image">Image </label>
+      <input id="image" type="file" class="form-input" value="image" />
+      <br>
+    </div>
+    <button type="submit">add product</button>
+  </form>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+  <script src="./sell.js"></script>
+</body>
+
 </html>

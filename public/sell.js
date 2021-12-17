@@ -3,6 +3,11 @@ const fileFormDOM = document.querySelector(".file-form");
 
 const nameInput = document.querySelector("#name");
 const priceInput = document.querySelector("#price");
+const ageInput = document.querySelector("#age");
+const raceInput = document.querySelector("#race");
+const genderInput = document.querySelector("#gender");
+const typeInput = document.querySelector("#type");
+
 const imageInput = document.querySelector("#image");
 const fileForm = document.querySelector(".file-form");
 
@@ -13,12 +18,14 @@ fileForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const nameValue = nameInput.value;
   const priceValue = priceInput.value;
+  const ageValue = ageInput.value;
+  const raceValue = raceInput.value;
+  const genderValue = genderInput.value;
+  const typeValue = typeInput.value;
   try {
-    const product = { name: nameValue, price: priceValue, image: imageValue };
-    console.log(product);
+    const product = { name: nameValue, type: typeValue, price: priceValue, image: imageValue, race: raceValue, gender: genderValue, age: ageValue};
     await axios.post(`${url}/sell`, product);
-    priceValue = 0;
-    fetchProducts();
+    priceInput.value = 0
   } catch (error) {
     console.log(error);
   }
@@ -34,7 +41,7 @@ imageInput.addEventListener("change", async (e) => {
     const {
       data: {
         image: {
-          src 
+          src
         },
       },
     } = await axios.post(`${url}/uploads`, formData, {
@@ -43,7 +50,6 @@ imageInput.addEventListener("change", async (e) => {
       },
     });
     imageValue = src
-    console.log(data);
   } catch (err) {
     console.log(err);
   }

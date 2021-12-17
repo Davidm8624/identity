@@ -5,7 +5,8 @@ const {
   createProduct,
   getAllProducts,
   addToCart,
-  getAProduct
+  getAProduct,
+  getCartItems
 } = require("../controllers/productController");
 
 const { uploadProductImage } = require("../controllers/uploadController");
@@ -15,5 +16,6 @@ router.route("/shop").get(getAllProducts);
 router.route("/uploads").post(uploadProductImage);
 router.route("/cart").post(addToCart);
 router.route("/single").get(getAProduct)
+router.route("/cartItems").get(getCartItems)
 
 module.exports = router;

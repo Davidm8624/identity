@@ -4,6 +4,7 @@ const Cart = require("../Models/Cart");
 const createProduct = async (req, res) => {
   const product = await Product.create(req.body);
   res.status(200).json({ product });
+  console.log({product});
 };
 
 const getAllProducts = async (req, res) => {
@@ -22,6 +23,11 @@ const getAllProducts = async (req, res) => {
   // }
 };
 
+const getCartItems = async (req, res) => {
+    const product = await Cart.find({});
+    res.status(200).json({product})
+};
+
 const getAProduct = async(req, res) => {
   const id = req.query;
 
@@ -33,8 +39,8 @@ const addToCart = async (req, res) => {
   console.log(id + " id");
 
   const add = await Product.findById(id)
-  const {name, price, image} = add;
-  const cart = await Cart.create({name, price, image});
+  const {name, type, price, image} = add;
+  const cart = await Cart.create({name, type, price, image});
 
   res.status(200).json({msg: `${add} was added to your cart.`, cart});
 }
@@ -43,5 +49,6 @@ module.exports = {
   createProduct,
   getAllProducts,
   addToCart,
-  getAProduct
+  getAProduct,
+  getCartItems
 };
